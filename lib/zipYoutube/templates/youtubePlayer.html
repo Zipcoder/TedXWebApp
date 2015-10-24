@@ -1,0 +1,47 @@
+<ion-view view-title="Past TEDx Talks">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon"ng-click="openSideMenu()"><i class="ion-navicon-round"> Playlists</i></button>
+  </ion-nav-buttons>   
+  <ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content>
+
+      <ion-content>
+        <ion-list>
+          <div class="card">
+            <ion-item ng-repeat="video in videos">
+                <h3>{{video.title}}</h3>
+                <p>{{video.description}}</p>
+                <a ng-click="play(video)">
+                  <img ng-src="{{video.thumbnails.medium.url}}" />
+                </a>
+            </ion-item>
+          </div>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="right">
+
+      <ion-content scroll="false">
+        <form ng-submit="searchTedx(search)">
+          <div class="list">
+            <label class="item item-input">
+              <input type="text" ng-model="search" placeholder="Search TEDx"/>
+            </label>
+          </div>
+          <div class="padding">
+            <button type="submit" class="button button-block button-assertive">Search TEDx</button>
+          </div>
+        </form>
+        <ion-list>
+          <ion-item ng-click="selectPlaylist()">all</ion-item>
+          <ion-item ng-repeat="playlist in playlists" ng-click="selectPlaylist(playlist)">
+          {{playlist.title}}
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>    
+  </ion-side-menus>
+</ion-view>
