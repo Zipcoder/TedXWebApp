@@ -1,31 +1,4 @@
-scheduler.factory("SchedulerFactory", function($http) {
-	var events =[
-		{
-			"eventName": "Session 1", 
-			"eventTime": "8:00 am",
-			"sessionId": 1
-
-		},
-		{
-			"eventName": "Session 2",
-			"eventTime": "10:30 am",
-			"sessionId": 2
-
-		},
-		{
-			"eventName": "Session 3", 
-			"eventTime": "1:00 pm",
-			"sessionId": 3
-		},
-		{
-			"eventName": "Session 4", 
-			"eventTime": "3:15 pm",
-			"sessionId": 4
-
-		}
-	];
-
-	var sessionData = [
+[
 	{
 		"firstName" : "Mindy",
 		"lastName"	: "Chernoff",
@@ -287,28 +260,5 @@ scheduler.factory("SchedulerFactory", function($http) {
 		"bio"		: "Hari is chef and ownr of a(MUSE.) inspired food & drink in Rehoboth Beach Delaware has always been passionate about food. As long as he can remember, he’s been curious about different foods and flavor combinations. Hari enrolled in the Restaurant School at Walnut Hill College and commuted to Philadelphia for classes while working full time at the restaurant Nage. At age 30, 9 months after opening a(MUSE.) Hari was nominated for the Rising Star Chef Award from the James Beard Foundation and was also honored with a nomination for best chef mid-Atlantic James beard foundation 2015. His second restaurant, Grandpa (MAC) opened in summer 2015.",
 		"imageUrl"	: "http://www.tedxwilmington.com/_/rsrc/1441736866302/2015-1/HariA.png"
 	}	
-];
-	return {
-		all:events,
-		getBySession: function(sessionId) {
-			var session =  new Array();
-			for(e in sessionData) {
-				if(sessionData[e].session == sessionId){
-					session.push(sessionData[e]);
-				}
-			}
-			return session;
 
-		},
-		getByLastName: function(lastName) {
-			var session ;
-			for(e in sessionData) {
-				var name = sessionData[e].firstName + sessionData[e].lastName;
-				if(name == lastName){
-					session = sessionData[e];
-				}
-			}
-			return session;			
-		}
-	}
-});
+]

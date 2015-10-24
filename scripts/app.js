@@ -49,9 +49,20 @@ angular.module('starter', ['ionic', 'tedx.scheduler', 'tedx.maps', 'tedx.youtube
   .state('core.detail', {
     url: '/schedule/:detailId',
     views: {
-      'schedule-detail': {
+      'schedule-main': {
         templateUrl: 'lib/zipScheduler/templates/schedule-detail.html',
         controller: 'Schedule-DetailCtrl'
+      }
+    }
+
+  })
+
+  .state('core.profile', {
+    url: '/schedule/profile/:id',
+    views: {
+      'schedule-main': {
+        templateUrl: 'lib/zipScheduler/templates/schedule-profile.html',
+        controller: 'Schedule-ProfileCtrl'
       }
     }
 

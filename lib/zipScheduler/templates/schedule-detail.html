@@ -1,8 +1,13 @@
-<ion-view view-title="Schedule">
+<ion-view view-title="Sessions">
+  <!--<ion-nav-buttons side="left">
+    <button class="button button-icon" href="#/schedule"><i class="ion-arrow-left-c"></i>Back</button>
+  </ion-nav-buttons> -->
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/schedule/detail/{{event.sessionId}}">
-        {{event.eventName}}
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/core/schedule/profile/{{event.firstName}}{{event.lastName}}">
+        <h3>{{event.title}}</h3>
+        <p>{{event.firstName}} {{event.lastName}}</p>
+        <p>{{event.position}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
