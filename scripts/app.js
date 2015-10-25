@@ -19,6 +19,11 @@ angular.module('starter', ['ionic', 'tedx.scheduler', 'tedx.maps', 'tedx.youtube
     }*/
   });
 })
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+
+    $ionicConfigProvider.tabs.position('bottom'); // other values: top
+
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
 // Ionic uses AngularUI Router which uses the concept of states
